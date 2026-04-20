@@ -20,6 +20,9 @@ export default async function LocationCard({
   const data: Location = await response.json()
   return (
     <Card>
+
+
+        
       <CardHeader>
         <b className="w-full text-2xl">{data.locationName}</b>
       </CardHeader>

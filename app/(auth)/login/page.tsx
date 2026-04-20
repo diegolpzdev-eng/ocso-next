@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 export default function LoginPage() {
   const [submitting, setSubmitting] = useState(false)
   const router = useRouter()
-  const handleSubmit = async (e : any) => {
+  const handleSubmit = async (e : any ) => {
     setSubmitting(true);
     e.preventDefault()
     const formData = new FormData(e.target);
