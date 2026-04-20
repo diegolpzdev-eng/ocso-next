@@ -14,6 +14,8 @@ export default async function deleteLocation(formData: FormData){
        ...authHeaders(),
     }
   })
+
+  
   revalidateTag("dashboard:locations");
   redirect("/dashboard")
 }
