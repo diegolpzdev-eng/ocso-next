@@ -19,6 +19,9 @@ export async function updateLocation(store: string, formData: FormData) {
       }
     }
   }
+
+
+  
   location.locationLatLng = locationLatLng
   const response = await fetch(`${API_URL}/locations/${store}`, {
     method: "PATCH",

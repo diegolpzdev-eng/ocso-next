@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import { LuPencil } from "react-icons/lu";
 
 export default function UpdateLocation({children, store}: {children: ReactNode, store: string | string[] | undefined}) {
+    
   if (!store) return <div />;
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
@@ -14,6 +15,7 @@ export default function UpdateLocation({children, store}: {children: ReactNode, 
         <ModalContent className="w-full">
           {() => (
             <>
+
               <ModalBody>
                 {children}
               </ModalBody>
