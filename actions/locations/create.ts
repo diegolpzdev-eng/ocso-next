@@ -1,7 +1,7 @@
 "use server";
 import { API_URL } from "@/constants";
 import { Location } from "@/entities";
-// import { authHeaders } from "@/helpers/authHeaders";
+import { authHeaders } from "@/helpers/authHeaders";
 import { revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 export async function createLocation(formData: FormData) {
@@ -25,7 +25,7 @@ export async function createLocation(formData: FormData) {
     body: JSON.stringify(location),
     headers: {
       'content-type': 'application/json',
-      ...authHeaders()
+     ...authHeaders()
     }
   })
   const { locationId }: Location = await response.json()

@@ -1,18 +1,20 @@
 import { Location } from "@/entities";
 import { Card, CardHeader, CardBody, Divider } from "@nextui-org/react";
-import { API_URL, TOKEN_NAME } from "@/constants";
+import { API_URL } from "@/constants";
+import { authHeaders } from "@/helpers/authHeaders";
 import Link from "next/link";
-import { cookies } from "next/headers";
 export default async function LocationCard({
   store,
 }: {
   store: string | string[] | undefined;
 }) {
   if (!store) return null;
-  const token = cookies().get(TOKEN_NAME)?.value;
-  const response = await fetch(`${API_URL}/locations/${store}`,{
+  const response = await fetch(`${API_URL}/locations/${store}`, {
     headers: {
-      Authorization: `Bearer ${token}`
+      ...authHeaders()
+    },
+    next: {
+      tags: ["dashboard:locations", `dashboard:locations:${store}`]
     }
   });
   const data: Location = await response.json()

@@ -1,48 +1,56 @@
-import axios from "axios";
-import { cookies } from "next/headers";
-import { TOKEN_NAME } from "@/constants";
 import { Location } from "@/entities";
+import { API_URL, TOKEN_NAME } from "@/constants";
 import SelectLocation from "./_components/SelectLocation";
 import LocationCard from "./_components/LocationCard";
 import FormNewLocation from "./_components/FormNewLocation";
 
-const LocationsPage = async ({ searchParams }: {
-    searchParams:
-    { [key: string]: string | string[] | undefined }
+import { authHeaders } from "@/helpers/authHeaders";
+import DeleteLocationButton from "./_components/DeleteLocationbutton";
+
+const LocationsPage = async ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-    const userCookies = cookies();
-    const token = userCookies.get(TOKEN_NAME)?.value;
-    let { data } = await axios.get<Location[]>("http://127.0.0.1:4000/locations", {
-        headers: {
-            "Authorization": `Bearer ${token}`
-        }
-    });   
-    data = [
+  const response = await fetch(
+    `${API_URL}/locations`,
     {
-      
-        locationId: 0,
-        locationName: "Ninguna",
-        locationLatLng: [0, 0],
-        locationAddress: "No existe",
-      
+      headers: {
+        ...authHeaders()
+      },
+      next: {
+        tags: ["dashboard:locations"]
+      }
     },
-    ...data
-    ];
-
-    return (
-        <div className="w-8/12">
-            <div className="w-full flex flex-col items-center h-[90vh] bg-red-50">
-                <div className="w-1/2 my-10">
-                    <SelectLocation locations={data} store={searchParams?.store} />
-                </div>
-                <div className="w-full">
-                    <LocationCard store={searchParams?.store} />
-                </div>
-                <FormNewLocation />
-            </div>
+  );
+  let data: Location[] = await response.json()
+  data = [
+    {
+      locationId: 0,
+      locationName: "Ninguna",
+      locationLatLng: [0, 0],
+      locationAddress: "No existe",
+    },
+    ...data,
+  ];
+  return (
+    <div className="w-7/12">
+      <div className="w-full flex flex-col items-center h-[90vh] bg-red-50">
+        <div className="w-1/2 my-10">
+          <SelectLocation locations={data} store={searchParams.store} />
         </div>
-    )
-
+        <div className="w-8/12">
+          <LocationCard store={searchParams.store} />
+        </div>
+        <div className="w-6/12">
+        <FormNewLocation store={searchParams.store}/>
+        </div>
+        <div className="flex flex-row flex-grow-0 gap-10  items-center">
+        <DeleteLocationButton store={searchParams.store} /> 
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default LocationsPage;
