@@ -27,3 +27,9 @@ export default async function updateManager(managerId: string, formData: FormDat
      redirect("/dashboard/managers");
   }
 }
+
+
+
+
+
+
