@@ -1,3 +1,6 @@
+
+
+
 import updateManager from "@/actions/managers/update";
 import { Manager } from "@/entities";
 import { Button, Input } from "@nextui-org/react";
@@ -58,6 +61,7 @@ export default async function FormUpdateManager({
       <Button color="primary" type="submit">
         Actualizar
       </Button>
+      
     </form>
   );
 }

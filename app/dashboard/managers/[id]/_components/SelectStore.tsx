@@ -1,3 +1,5 @@
+
+
 'use client'
 import { Location } from "@/entities"
 import { Select, SelectItem } from "@nextui-org/react"
@@ -19,3 +21,5 @@ export default function SelectStore({stores, defaultStore} : {stores: Location[]
     </Select>
   )
 }
+
+

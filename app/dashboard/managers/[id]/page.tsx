@@ -29,8 +29,10 @@ export default async function ManagerPage({
       <div className="bg-white shadow-medium rounded-md px-10 py-2 flex flex-row flex-grow-0 gap-2">
         <UpdateManager>
           <FormUpdateManager manager={data} />
+
         </UpdateManager>
         
+
         <DeleteManagerButton managerId={data.managerId} />
       </div>
     </div>

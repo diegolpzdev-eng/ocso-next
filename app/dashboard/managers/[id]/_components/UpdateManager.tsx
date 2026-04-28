@@ -1,3 +1,6 @@
+
+
+
 'use client';
 import {Modal, ModalContent, ModalBody, Button, useDisclosure} from "@nextui-org/react";
 import { ReactNode } from "react";
@@ -23,3 +26,5 @@ export default function UpdateManager({children}: {children: ReactNode}) {
     </div>
   );
 }
+
+
