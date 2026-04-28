@@ -13,6 +13,7 @@ export default async function updateManager(managerId: string, formData: FormDat
     manager[key] = formData.get(key);
   }
   manager['managerSalary'] = +manager['managerSalary'];
+  
   manager.location = +manager.location
   if (!manager?.location) delete manager?.location;
   const response = await fetch(`${API_URL}/managers/${managerId}`, {
@@ -23,6 +24,8 @@ export default async function updateManager(managerId: string, formData: FormDat
       'content-type': "application/json"
     },
   })
+
+
   if (response.status === 200){
      revalidateTag("dashboard:managers")
      revalidateTag(`dashboard:managers:${managerId}`)
