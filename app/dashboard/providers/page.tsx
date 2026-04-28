@@ -24,6 +24,7 @@ const ProviderPage = async () => {
         <FormCreateProvider />
       </CreateProvider>
       <div className="flex flex-wrap w-full py-20 flex-grow-0 gap-14">
+        
         {providers.map((provider: Provider) => (
           <Link
             className="hover:scale-110 transition-transform"
