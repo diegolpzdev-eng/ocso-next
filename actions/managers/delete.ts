@@ -11,6 +11,8 @@ export default async function deleteManager(managerId: string, formData: FormDat
       ...authHeaders(),
     },
   })
+
+  
   if (response.status === 200) revalidateTag("dashboard:managers")
 }
 

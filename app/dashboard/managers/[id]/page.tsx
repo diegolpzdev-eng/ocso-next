@@ -30,8 +30,13 @@ export default async function ManagerPage({
         <UpdateManager>
           <FormUpdateManager manager={data} />
         </UpdateManager>
+        
         <DeleteManagerButton managerId={data.managerId} />
       </div>
     </div>
   );
 }
+
+
+
+
