@@ -38,12 +38,14 @@ export default function ManagerCard({ manager }: { manager: Manager }) {
             Salario: <b>{manager.managerSalary}</b>
           </p>
           <p className={manager.location ? "" : "hidden"}>
+
             Tienda:{" "}
             <Link
               href={{
                 pathname: `/dashboard`,
                 query: {
                   store: manager?.location?.locationId
+                  
                 }
               }}
             >

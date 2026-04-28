@@ -23,6 +23,7 @@ export default async function CountManagersPage() {
   });
   return (
     <Card className="w-fit px-2 py-4 text-center">
+      
       <h1>
         Hay {managers.length} manager{managers.length > 1 ? "s" : ""}{" "}
       </h1>
@@ -32,3 +33,10 @@ export default async function CountManagersPage() {
     </Card>
   );
 }
+
+
+
+
+
+
+
