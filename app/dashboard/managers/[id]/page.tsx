@@ -27,11 +27,12 @@ export default async function ManagerPage({
     <div className="flex flex-col gap-10 flex-grow-0 items-center justify-center">
       <ManagerCard manager={data} />
       <div className="bg-white shadow-medium rounded-md px-10 py-2 flex flex-row flex-grow-0 gap-2">
+        
         <UpdateManager>
           <FormUpdateManager manager={data} />
 
         </UpdateManager>
-        
+
 
         <DeleteManagerButton managerId={data.managerId} />
       </div>
