@@ -9,6 +9,7 @@ import {
 } from "@nextui-org/react";
 import { ReactNode } from "react";
 
+
 export default function CreateEmployee({
   children,
   icon,
@@ -19,6 +20,7 @@ export default function CreateEmployee({
   photo: string | undefined;
 }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
 
   return (
     <div>

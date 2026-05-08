@@ -11,8 +11,11 @@ export default function FormCreateUserEmployee({
   employee: Employee;
 }) {
   const [password, setPassword] = useState<string>();
+
   const [visible, setVisible] = useState<boolean>(false);
+
   const { employeeId } = employee;
+  
   const registerEmployeeById = registerEmployee.bind(null, employeeId);
   return (
     <form action={registerEmployeeById} className="py-10 flex flex-col gap-2">

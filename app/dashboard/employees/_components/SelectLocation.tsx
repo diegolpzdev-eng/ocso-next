@@ -6,11 +6,17 @@ export default function SelectLocations({stores, defaultStore} : {stores: Locati
     <Select label="Tienda" name="location" defaultSelectedKeys={defaultStore ? [String(defaultStore)] : undefined}>
       {
        stores.map((store: Location) => (
+
         <SelectItem key={String(store.locationId)}>
           {store.locationName}
         </SelectItem>
+
       ))
     }
     </Select>
   )
 }
+
+
+
+
