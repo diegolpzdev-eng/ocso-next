@@ -14,7 +14,9 @@ export default function EmployeeDataCard({ employee }: { employee: Employee }) {
             {employee.employeeName + " " + employee.employeeLastName}
           </h1>
           <h1> {employee.employeeEmail} </h1>
+
           <h1> {employee.employeePhoneNumber} </h1>
+
         </div>
         <div>
           <DeleteEmployee employeeId={employee.employeeId} />
@@ -34,15 +36,17 @@ export default function EmployeeDataCard({ employee }: { employee: Employee }) {
       <div className="h-full py-20 w-1 bg-zinc-300 mx-6" />
         <CreateUser icon={<LuUser size="20" />} photo={employee?.employeePhoto}>
           {
+
           !employee.user  ? (
             <FormCreateUserEmployee employee={employee} />
           ) : (
             <FormUpdateUser user={employee.user} />
           )
+          
         }
         </CreateUser>
     </div>
   );
 
-  
+
 }

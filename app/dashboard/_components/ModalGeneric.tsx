@@ -8,6 +8,10 @@ import {
 } from "@nextui-org/react";
 import { ReactNode } from "react";
 
+
+
+
+
 export default function ModalGeneric({
   children,
   icon,
@@ -16,6 +20,8 @@ export default function ModalGeneric({
   icon: ReactNode;
 }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+
 
   return (
     <div>

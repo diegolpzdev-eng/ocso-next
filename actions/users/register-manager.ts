@@ -8,6 +8,7 @@ export default async function registerManager(managerId: string, formData: FormD
   data.userPassword = formData.get("userPassword")
   data.userRoles = "Manager"
 
+  
   const response = await fetch(`${API_URL}/auth/register/${managerId}?role=manager`, {
     method: "POST",
     headers: {
@@ -16,5 +17,7 @@ export default async function registerManager(managerId: string, formData: FormD
     },
     body: JSON.stringify(data)
   })
+
+
   console.log(await response.json());
 }

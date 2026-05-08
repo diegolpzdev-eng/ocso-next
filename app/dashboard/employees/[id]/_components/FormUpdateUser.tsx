@@ -6,6 +6,10 @@ import { generate } from "generate-password";
 import { useState } from "react";
 import { LuEye } from "react-icons/lu";
 
+
+
+
+
 export default function FormUpdateUser({ user }: { user: User }) {
   const { userId } = user;
   const [password, setPassword] = useState<string>();
@@ -40,6 +44,7 @@ export default function FormUpdateUser({ user }: { user: User }) {
       >
         Generar Contraseña
       </Button>
+
       <Button color="primary" type="submit">Actualizar Usuario</Button>
     </form>
   )

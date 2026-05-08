@@ -8,6 +8,10 @@ import FormCreateUserManager from "./FormCreateUser";
 export default function ManagerCard({ manager }: { manager: Manager }) {
   console.log(manager);
   return (
+
+
+
+
     <Card className="mx-20 py-2 text-center">
       <CardHeader>
         <p className="w-full">
@@ -69,5 +73,15 @@ export default function ManagerCard({ manager }: { manager: Manager }) {
         )}
       </CardBody>
     </Card>
+
+
+
+
   );
 }
+
+
+
+
+
+

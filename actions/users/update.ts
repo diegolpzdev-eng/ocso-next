@@ -4,8 +4,11 @@ import { authHeaders } from "@/helpers/authHeaders"
 
 export default async function updateUser(userId: string, formData: FormData) {
   let data:any = {}
+
   data.userEmail = formData.get("userEmail") ? formData.get("userEmail") : undefined;
+
   data.userPassword = formData.get("userPassword") ? formData.get("userPassword") : undefined;
+
   const response = await fetch(`${API_URL}/auth/${userId}`, {
     method: "PATCH",
     headers: {
@@ -14,5 +17,6 @@ export default async function updateUser(userId: string, formData: FormData) {
     },
     body: JSON.stringify(data)
   })
+  
   console.log(await response.json());
 }

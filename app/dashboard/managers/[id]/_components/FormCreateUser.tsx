@@ -5,6 +5,11 @@ import { useState } from "react";
 import { generate } from "generate-password";
 import { LuEye } from "react-icons/lu";
 import registerManager from "@/actions/users/register-manager";
+
+
+
+
+
 export default function FormCreateUserManager({
   manager,
 }: {
@@ -31,6 +36,8 @@ export default function FormCreateUserManager({
           </button>
         }
       />
+
+      
       <Button
         color="danger"
         onPress={() => {
@@ -43,6 +50,7 @@ export default function FormCreateUserManager({
       >
         Generar Contraseña
       </Button>
+
       <Button color="primary" type="submit">Crear Usuario</Button>
     </form>
   );

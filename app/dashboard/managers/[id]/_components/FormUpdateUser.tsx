@@ -8,9 +8,13 @@ import { LuEye } from "react-icons/lu";
 
 export default function FormUpdateUser({ user }: { user: User }) {
   const { userId } = user;
+
   const [password, setPassword] = useState<string>();
+
   const [visible, setVisible] = useState<boolean>(false);
+
   const updateUserById = updateUser.bind(null, userId);
+
   return (
     <form action={updateUserById} className="py-10 flex flex-col gap-2">
       <h1 className="text-white text-xl font-bold text-center">
@@ -44,3 +48,11 @@ export default function FormUpdateUser({ user }: { user: User }) {
     </form>
   )
 }
+
+
+
+
+
+
+
+
